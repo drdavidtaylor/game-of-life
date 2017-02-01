@@ -33,6 +33,15 @@ public class Entry implements Serializable {
         return numberOfElements;
     }
 
+    public Entry() {
+
+    }
+
+    public Entry(int numberOfElements, long nanoTime) {
+        this.numberOfElements = numberOfElements;
+        this.nanoTime = nanoTime;
+    }
+
     public long getNanoTime() {
         return nanoTime;
     }

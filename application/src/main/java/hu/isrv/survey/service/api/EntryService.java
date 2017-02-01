@@ -9,10 +9,10 @@ import java.util.List;
  */
 public interface EntryService {
 
-    void saveEntry(int elementsNumber, long nanoTime);
+    void saveEntry(int numberOfElements, long nanoTime);
 
     List<Entry> findAll();
 
-    List<Entry> findByElementsNumber(int elementsNumber);
+    List<Entry> findByNumberOfElements(int numberOfElements);
 
 }

@@ -23,7 +23,7 @@ public class EntryServiceImpl implements EntryService {
     }
 
     @Override
-    public List<Entry> findByElementsNumber(int elementsNumber) {
+    public List<Entry> findByNumberOfElements(int numberOfElements) {
         return null;
     }
 }
