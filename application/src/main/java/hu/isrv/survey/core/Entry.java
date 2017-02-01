@@ -18,6 +18,37 @@ public class Entry implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    private long nanoTime;
+
+    private int numberOfElements;
+
+
+    @Override
+    public String toString() {
+        return String.format("Entry[id=%d, numberOfElements='%d', nanoTime='%d']", id, numberOfElements, nanoTime);
+    }
+
+    @Override
+    public final int hashCode() {
+        return numberOfElements;
+    }
+
+    public long getNanoTime() {
+        return nanoTime;
+    }
+
+    public void setNanoTime(long nanoTime) {
+        this.nanoTime = nanoTime;
+    }
+
+    public int getNumberOfElements() {
+        return numberOfElements;
+    }
+
+    public void setNumberOfElements(int numberOfElements) {
+        this.numberOfElements = numberOfElements;
+    }
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
@@ -29,4 +60,5 @@ public class Entry implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
 }
