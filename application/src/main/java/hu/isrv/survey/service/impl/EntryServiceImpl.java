@@ -1,7 +1,9 @@
 package hu.isrv.survey.service.impl;
 
 import hu.isrv.survey.core.Entry;
+import hu.isrv.survey.persistent.EntryRepository;
 import hu.isrv.survey.service.api.EntryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,18 +14,21 @@ import java.util.List;
 @Service
 public class EntryServiceImpl implements EntryService {
 
-    @Override
-    public void saveEntry(int elementsNumber, long nanoTime) {
+    @Autowired
+    EntryRepository entryRepository;
 
+    @Override
+    public void saveEntry(int numberOfElements, long nanoTime) {
+        entryRepository.save(new Entry(numberOfElements, nanoTime));
     }
 
     @Override
     public List<Entry> findAll() {
-        return null;
+        return (List<Entry>) entryRepository.findAll();
     }
 
     @Override
     public List<Entry> findByNumberOfElements(int numberOfElements) {
-        return null;
+        return entryRepository.findByNumberOfElements(numberOfElements);
     }
 }

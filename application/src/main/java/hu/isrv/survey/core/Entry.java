@@ -1,15 +1,13 @@
 package hu.isrv.survey.core;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by teddywestside on 2017. 02. 01..
  */
 @Entity
+//@Table(name = "ENTRY")
 public class Entry implements Serializable {
 
     private static final long serialVersionUID = -577504403338770409L;
@@ -18,8 +16,10 @@ public class Entry implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+//    @Column(name = "NANOTIME")
     private long nanoTime;
 
+//    @Column(name = "NUMBEROFELEMENTS")
     private int numberOfElements;
 
 
@@ -69,5 +69,6 @@ public class Entry implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
 
 }

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 /**
  * Created by teddywestside on 2017. 02. 01..
  */
-@Service
 public interface GolService {
 
     Structure computeSequentStructure(Structure structure);

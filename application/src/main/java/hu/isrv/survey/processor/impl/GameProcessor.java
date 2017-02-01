@@ -120,7 +120,7 @@ public class GameProcessor implements Processor<Structure> {
         try {
             structureArray[x][y] = true;
         } catch (IndexOutOfBoundsException exception) {
-            log.error("Improper item on list.", exception.getMessage());
+            log.error("Hibás elem a listában.", exception.getMessage());
         }
     }
 
