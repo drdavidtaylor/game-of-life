@@ -1,12 +1,16 @@
 package hu.isrv.survey.controller.impl.rest;
 
 import hu.isrv.survey.controller.api.rest.GolController;
+import hu.isrv.survey.processor.impl.Structure;
 import hu.isrv.survey.service.api.EntryService;
 import hu.isrv.survey.service.api.GolService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -24,6 +28,9 @@ public class GolControllerImpl implements GolController {
     @Autowired
     private EntryService entryService;
 
-
-
+    @Override
+    @RequestMapping(value = "/compute", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Structure calculate(@RequestBody Structure structure) {
+        return null;
+    }
 }
